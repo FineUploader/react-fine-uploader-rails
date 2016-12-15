@@ -1,9 +1,8 @@
-# README
+# Rails with ReactFineUploader Example App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is example application showing how to integrate rails5 with reactfineuploader and react_on_rails gem.
 
-Things you may want to cover:
+If you want to test it:
 
 * Ruby version
 
