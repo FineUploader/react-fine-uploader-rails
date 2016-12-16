@@ -1,16 +1,26 @@
-# Rails with ReactFineUploader Example App
+# Ruby on Rails with ReactFineUploader Example App
 
-This is example application showing how to integrate rails5 with reactfineuploader and react_on_rails gem.
+This is example application showing how to integrate rails5(works with rails 4 as well) with [reactfineuploader](https://github.com/FineUploader/react-fine-uploader) and [react_webpack_rails](https://github.com/netguru/react_webpack_rails) gem.
+CarrierWave is responsible for handling files in the backend.
 
-If you want to test it:
 
-* Ruby version
+## Things covered:
+- uploading files
+- chunking
+- deleting files from fileuploader
 
-* System dependencies
 
-* Configuration
+## Usage:
 
-* Database creation
+Clone this repo [git@github.com:Panczo/reactfineuploader-example.git](git@github.com:Panczo/reactfineuploader-example.git)
+
+  $ bundle install
+
+  $ rails db:migrate
+
+  $ npm install
+
+  $ npm install react-fine-uploader
 
 * Database initialization
 
@@ -19,5 +29,3 @@ If you want to test it:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
