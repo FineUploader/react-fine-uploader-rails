@@ -12,7 +12,7 @@ CarrierWave is responsible for handling files in the backend.
 
 ## Usage:
 
-    $ Clone this repo [https://github.com/Panczo/reactfineuploader-example.git](https://github.com/Panczo/reactfineuploader-example.git)
+    $ Clone this repo 
 
     $ bundle install
 
