@@ -12,20 +12,14 @@ CarrierWave is responsible for handling files in the backend.
 
 ## Usage:
 
-Clone this repo [git@github.com:Panczo/reactfineuploader-example.git](git@github.com:Panczo/reactfineuploader-example.git)
+    $ Clone this repo [https://github.com/Panczo/reactfineuploader-example.git](https://github.com/Panczo/reactfineuploader-example.git)
 
-  $ bundle install
+    $ bundle install
 
-  $ rails db:migrate
+    $ rails db:migrate
 
-  $ npm install
+    $ npm install
 
-  $ npm install react-fine-uploader
+    $ npm start
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+    $ rails s
