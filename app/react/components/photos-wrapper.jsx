@@ -2,6 +2,27 @@ import React, { Component } from 'react';
 import FineUploaderTraditional from 'react-fine-uploader';
 import Gallery from 'react-fine-uploader/components/gallery';
 
+const uploader = new FineUploaderTraditional({
+    options: {
+        chunking: {
+            enabled: true,
+            success: {
+              endpoint: "/uploads_finish"
+            }
+        },
+        deleteFile: {
+            enabled: true,
+            endpoint: '/delete_uploads',
+            method: 'POST'
+        },
+        request: {
+            endpoint: '/uploads'
+        },
+        retry: {
+            enableAuto: true
+        }
+    }
+})
 
 class PhotosWrapper extends React.Component {
   constructor(props){
@@ -10,36 +31,30 @@ class PhotosWrapper extends React.Component {
       photos: this.props.photos
     }
   }
-  render() {
-    const uploader = new FineUploaderTraditional({
-        options: {
-            chunking: {
-                enabled: true
-            },
-            deleteFile: {
-                enabled: true,
-                endpoint: '/delete_uploads',
-                method: 'POST',
-                params: {
-                    authenticity_token: $('meta[name="csrf-token"]').attr('content')
-                }
-            },
-            request: {
-                endpoint: '/uploads',
-                params: {
-                    authenticity_token: $('meta[name="csrf-token"]').attr('content')
-                }
-            },
-            retry: {
-                enableAuto: true
-            }
-        }
+  componentDidMount(){
+    const auth_token = $('meta[name="csrf-token"]').attr('content');
+    uploader.on('onUpload', (id, name) => {
+      console.log('onUpload')
+      let params = {
+        authenticity_token: auth_token
+        // additional params...
+      }
+      uploader.methods.setParams(params, id)
     })
-    console.log("Uploader");
-    console.log(uploader);
+
+    uploader.on('onSubmitDelete', (id) => {
+      console.log('onSubmitDelete')
+      let params = {
+        authenticity_token: auth_token
+      }
+      uploader.methods.setDeleteFileParams(params, id)
+    })
+  }
+
+  render() {
     const photos = this.state.photos.map((photo) =>
       <div className="card" key={photo.id}>
-        <img src={photo.attachment.thumb.url} className="image-responsive"></img>
+        <img src={photo.image.thumb.url} className="image-responsive"></img>
         <p className="card-text">{photo.name}</p>
       </div>
     );

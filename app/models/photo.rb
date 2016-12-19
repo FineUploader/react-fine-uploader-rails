@@ -1,12 +1,12 @@
 class Photo < ApplicationRecord
-  mount_uploader :attachment, AttachmentUploader
+  mount_uploader :image, ImageUploader
 
   def self.combine_photos(photos)
-    # =>  Convert the carrierwave attachment
-    files = photos.map{|p| p.attachment.file.to_file}
+    # =>  Convert the carrierwave attachment(image)
+    files = photos.map{|p| p.image.file.to_file}
     orginal_filename = photos.first.name
 
-    # => Create new file
+    # => Create a new file
     new_file = File.open(orginal_filename, 'w')
 
     # => Save information from parted files into the new one
@@ -17,12 +17,12 @@ class Photo < ApplicationRecord
       end
     end
 
-    # => Create new photo's object with combined file
+    # => Create new photo's object with the combined file
     final_photo = Photo.new
     final_photo.name = orginal_filename
-    final_photo.attachment = new_file
+    final_photo.image = new_file
 
-    # => Remove all parts of image
+    # => Remove all parts of the image
     photos.destroy_all
 
     return final_photo

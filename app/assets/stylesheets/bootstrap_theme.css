@@ -33,7 +33,6 @@ h6, .h6 {
   max-width: 60rem;
 }
 
-
 /*
  * Masthead for nav
  */
@@ -79,6 +78,13 @@ h6, .h6 {
 /*
  * Blog name and description
  */
+ .card {
+   border: 0 none;
+   float: left;
+   margin-bottom: 2rem;
+   padding: 0.75rem;
+   width: 33.333%;
+ }
 
 .blog-header {
   padding-bottom: 1.25rem;
@@ -162,4 +168,79 @@ h6, .h6 {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+
+body {
+    min-height: 75rem;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-collapse .container-fluid {
+    border-bottom: 1px solid #55595c;
+    padding: 2rem 2.5rem;
+}
+.navbar-collapse h4 {
+    color: #818a91;
+}
+.navbar-collapse .text-muted {
+    color: #818a91;
+}
+.about {
+    float: left;
+    margin-right: 3rem;
+    max-width: 30rem;
+}
+.social a {
+    color: #eceeef;
+    font-weight: 500;
+}
+.social a:hover {
+    color: #fff;
+}
+.jumbotron {
+    background-color: #fff;
+    margin-bottom: 0;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+}
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+.jumbotron-heading {
+    font-weight: 300;
+}
+.jumbotron .container {
+    max-width: 40rem;
+}
+.album {
+    background-color: #f7f7f7;
+    min-height: 50rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+.card {
+    border: 0 none;
+    float: left;
+    margin-bottom: 2rem;
+    padding: 0.75rem;
+    width: 33.333%;
+}
+.card > img {
+    margin-bottom: 0.75rem;
+}
+.card-text {
+    font-size: 85%;
+}
+footer {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+footer p {
+    margin-bottom: 0.25rem;
+}
+
+.react-fine-uploader-gallery-file-input-container {
+  width: 150px;
 }
